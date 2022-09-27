@@ -1,8 +1,8 @@
 public class PieceTriangulaire extends Piece {
-    private int _base;
-    private int _hauteur;
+    private double _base;
+    private double _hauteur;
 
-    public PieceTriangulaire(TypePiece typePiece, String niveau, int uneBase, int unehauteur) {
+    public PieceTriangulaire(TypePiece typePiece, String niveau, double uneBase, double unehauteur) {
         super(typePiece, niveau);
         this._base = uneBase;
         this._hauteur = unehauteur;
@@ -17,11 +17,11 @@ public class PieceTriangulaire extends Piece {
         return result;
     }
 
-    public int get_base() {
+    public double get_base() {
         return _base;
     }
 
-    public int get_hauteur() {
+    public double get_hauteur() {
         return _hauteur;
     }
 

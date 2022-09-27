@@ -1,9 +1,10 @@
 public class PieceTrapezoidale extends Piece {
-    private int _grandebase;
-    private int _petitbase;
-    private int _hauteur;
+    private double _grandebase;
+    private double _petitbase;
+    private double _hauteur;
 
-    public PieceTrapezoidale(TypePiece typePiece, String niveau, int uneGrandeBase, int unePetitBase, int uneHauteur) {
+    public PieceTrapezoidale(TypePiece typePiece, String niveau, double uneGrandeBase, double unePetitBase,
+            double uneHauteur) {
         super(typePiece, niveau);
         this._grandebase = uneGrandeBase;
         this._petitbase = unePetitBase;

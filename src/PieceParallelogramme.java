@@ -1,9 +1,9 @@
 public class PieceParallelogramme extends Piece {
 
-    private int _base;
-    private int _hauteur;
+    private double _base;
+    private double _hauteur;
 
-    public PieceParallelogramme(TypePiece typePiece, String niveau, int uneBase, int uneHauteur) {
+    public PieceParallelogramme(TypePiece typePiece, String niveau, double uneBase, double uneHauteur) {
         super(typePiece, niveau);
         this._base = uneBase;
         this._hauteur = uneHauteur;
@@ -17,11 +17,11 @@ public class PieceParallelogramme extends Piece {
         return result;
     }
 
-    public int get_base() {
+    public double get_base() {
         return _base;
     }
 
-    public int get_hauteur() {
+    public double get_hauteur() {
         return _hauteur;
     }
 
