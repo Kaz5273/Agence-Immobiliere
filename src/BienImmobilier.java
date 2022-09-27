@@ -6,7 +6,7 @@ public abstract class BienImmobilier {
     private String _ville;
     private String _codePostal;
     private Vendeur _vendeur;
-    private ArrayList<Piece> _piece;
+    protected ArrayList<Piece> _piece;
 
     public BienImmobilier(String rue, String ville, String codePostal, Vendeur vendeur) {
         this._rue = rue;

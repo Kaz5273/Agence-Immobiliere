@@ -14,8 +14,4 @@ public class PieceCirculaire extends Piece {
         return result;
     }
 
-    public int get_rayon() {
-        return _rayon;
-    }
-
 }

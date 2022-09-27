@@ -44,4 +44,50 @@ public class TestAgenceImmobiliere {
         assertEquals(17.5, pieceTriangulaire.surface(), DELTA);
     }
 
+    // @Test
+    // public void TestSurfaceHabitable(){
+    // Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com",
+    // "06.74.74.00.00");
+    // BienImmobilier bienImmobilier = new BienImmobilier("16 rue du lac", "ANNECY",
+    // "74000", vendeur, 5);
+    // }
+
+    @Test
+    public void TestSurfaceHabitable() {
+        TypePiece chambre = new TypePiece(TypePiece.CHAMBRE, true, true);
+        TypePiece Cave = new TypePiece(TypePiece.CAVE, false, false);
+        Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com", "06.74.74.00.00");
+        Appartement appartement = new Appartement("16 rue du lac", "ANNECY", "74000", vendeur, "1er étage");
+        appartement.ajouterPiece(new PieceQuadrilatere(chambre, "0", 4, 3));
+        appartement.ajouterPiece(new PieceQuadrilatere(Cave, "-1", 3, 3));
+        assertEquals(12.0, appartement.surfaceHabitable(), DELTA);
+        assertEquals(9.0, appartement.surfaceNonHabitable(), DELTA);
+    }
+
+    @Test
+    public void TypeBien() {
+        TypePiece chambre = new TypePiece(TypePiece.CHAMBRE, true, true);
+        TypePiece Cave = new TypePiece(TypePiece.CAVE, false, false);
+
+        Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com", "06.74.74.00.00");
+
+        Appartement appartement = new Appartement("16 rue du lac", "ANNECY", "74000", vendeur, "1er étage");
+        appartement.ajouterPiece(new PieceQuadrilatere(chambre, "0", 1, 1));
+        assertEquals("T1", appartement.typeBien());
+
+    }
+
+    @Test
+    public void prix() {
+        TypePiece chambre = new TypePiece(TypePiece.CHAMBRE, true, true);
+        TypePiece Cave = new TypePiece(TypePiece.CAVE, false, false);
+
+        Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com", "06.74.74.00.00");
+
+        Appartement appartement = new Appartement("16 rue du lac", "ANNECY", "74000", vendeur, "1er étage");
+        Annonce annonceappartement = new Annonce("AM0922001", "27/09/2022", "Villa familliale", 4860, appartement);
+        appartement.ajouterPiece(new PieceQuadrilatere(chambre, "0", 1, 1));
+        assertEquals(6075.0, annonceappartement.prix(), DELTA);
+    }
+
 }
